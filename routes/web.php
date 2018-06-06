@@ -11,13 +11,8 @@
 |
 */
 
-Route::name('home')->get('/', function(){
-    return view('accueil');
-});
-Route::name('apropos')->get('/apropos', function(){
-    return view('apropos');
-});
-Route::name('contact')->get('/contact', function(){
-    return view('contact');
-});
+Route::name('home')->get('/', 'PagesController@getHome');
+Route::name('about')->get('/about', 'PagesController@getAbout');
+Route::name('contact')->get('/contact', 'PagesController@getContact');
 Route::name('contact_submit')->post('/contact/submit', 'MessagesController@submit');
+Route::name('messages')->get('/messages', 'MessagesController@getMessages');

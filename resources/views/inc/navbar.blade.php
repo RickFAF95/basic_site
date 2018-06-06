@@ -1,19 +1,19 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Acme</a>
+    <a class="navbar-brand" href="{{ route('home') }}">Acme</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item {{ Request::is('/') ? 'active' : '' }}">
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ route('apropos') }}">About</a>
+            <li class="nav-item {{ Request::is('about') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('about') }}">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/contact">Contact</a>
+            <li class="nav-item {{ Request::is('contact') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('contact') }}">Contact</a>
             </li>
             {{--<li class="nav-item">--}}
                 {{--<a class="nav-link disabled" href="#">Disabled</a>--}}

@@ -9,7 +9,7 @@
 </head>
 <body>
     @include('inc.navbar')
-    <div class="container">
+    <div class="container"><br>
         @if(Request::is('/'))
             @include('inc.showcase')
         @endif
@@ -24,7 +24,7 @@
         </div>
     </div>
     <footer id="footer" class="text-center">
-        <p>Copyright 2018 &copy; Acme</p>
+        <p>Copyright 2018 &copy; Acme by <strong>RickFAF Dev&Design</strong></p>
     </footer>
 </body>
 </html>
